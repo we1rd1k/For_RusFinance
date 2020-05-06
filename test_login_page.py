@@ -6,16 +6,14 @@ import time
 
 #@pytest.mark.skip
 def test_can_go_to_login_page(browser):
-    #link = "https://stepik.org/"
     page = MainPage(browser, URL.mainPage_url, 15)
     page.open()
     page.should_be_login_link()
     page.go_to_login_page()
-    #time.sleep(5)
+
 
 #@pytest.mark.skip
 def test_successful_login(browser):
-    #link = "https://stepik.org/catalog?auth=login"
     login = LoginPage(browser, URL.loginPage_url)
     login.open()
     login.should_be_login_form()
@@ -25,7 +23,6 @@ def test_successful_login(browser):
 
 #@pytest.mark.skip
 def test_login_with_wrong_pass(browser):
-    #link = "https://stepik.org/catalog?auth=login"
     login = LoginPage(browser, URL.loginPage_url)
     login.open()
     login.should_be_login_form()
