@@ -44,10 +44,9 @@ class BasePage():
         return True
 
 
-    def should_be_mainPage_url(self):
+    def should_be_mainPage_url(self, url):
         try:
-            mainPage_url = "https://stepik.org/catalog"
-            WebDriverWait(self.browser, 10).until(ec.url_to_be(mainPage_url))
+            WebDriverWait(self.browser, 10).until(ec.url_to_be(url))
         except (TimeoutException):
             print(self.browser.current_url)
             raise Exception("It is not mainPage URL")
